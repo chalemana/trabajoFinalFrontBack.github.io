@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>eMercado - Todo lo que busques está aquí</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
+      rel="stylesheet"/>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/stylesProduct-info.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 justify-content-between">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="categories.html">Categorías</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sell.html">Vender</a>
+            </li>
+            <!--nombre usuario-->
+          <li class="nav-item">
+            <div class="dropdown"> <!--menu desplegable-->
+              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="usuariologin">
+                Usuario
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+                <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+                <li><a class="dropdown-item" href="#" id="logout">Cerrar Sesión</a></li>
+              </ul>
+            </div>
+          </li>
+           <!--Boton carrito-->
+           <li class="nav-item position-relative">
+            <a class="nav-link" href="cart.html">
+              <button type="button" class="btn btn-secondary position-relative" onclick="location.href='cart.html'">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-badge" class="badge bg-secondary position-absolute top-0 start-100 translate-middle p-1">
+                  0 - $0
+                </span>
+              </button>
+            </a>
+          </li>
+            <!--Boton DarkMode-->
+            <li class="nav-item">
+              <button id="theme-switch" class="animate__animated animate__fadeInRight">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-regular fa-sun"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container product-info-container">
+        <h2 id="productName">Nombre:</h2>
+        <div class="row">
+          <!-- Columna del Carrusel de imágenes -->
+          <div class="col-md-6">
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+              <div id="carousel" class="carousel-inner"></div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Columna de Descripción, Precio y Comentarios -->
+          <div class="col-md-6">
+            <div class="productContainer">
+              <h3><strong>Descripción Producto</strong></h3>
+              <p class="description">
+                <strong>Descripción:</strong>
+                <span id="productDescription"></span>
+              </p>
+              <p class="category">
+                <strong>Categoría:</strong> <span id="productCategory"></span>
+              </p>
+              <p class="price">
+                <strong>Precio:</strong> <span id="productPrice"></span>
+              </p>
+              <p class="sold-count">
+                <strong>Cantidad Vendidos:</strong>
+                <span id="soldCount">0</span>
+              </p>
+              <button id="buyButton" class="btn btn-outline-secondary btn-sm  animate__animated animate__heartBeat">
+                Comprar  <i class="fa-solid fa-cart-shopping"></i>
+              </button>
+            </div>
+
+            <!-- Sección de Comentarios -->
+            <div id="comentarioSeccion">
+              <h3><strong>Comentarios</strong></h3>
+              <div id="listaComentario"></div>
+            </div>
+
+            <!-- Sección de Calificación -->
+            <div id="clasControl">
+              <h3><strong>Calificar Producto</strong></h3>
+              <form>
+                <label class="estrellas">Calificación:</label>
+                <div id="clasificar">
+                  <i class="fa fa-star star"></i>
+                  <i class="fa fa-star star"></i>
+                  <i class="fa fa-star star"></i>
+                  <i class="fa fa-star star"></i>
+                  <i class="fa fa-star star"></i>
+                </div>
+                <textarea
+                  id="comentario"
+                  placeholder="Deja tu comentario..."
+                ></textarea>
+                <button type="button" id="submitClas" class="btn btn-outline-secondary btn-sm"> Enviar </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sección para los productos relacionados -->
+    <section class="container mt-5  animate__animated animate__fadeInLeft">
+      <h3 class="tituloProdRelacionados">
+        <strong>Productos Relacionados</strong>
+      </h3>
+      <div class="row" id="produRelacionados"></div>
+      <!-- Aquí se mostrarán los productos relacionados -->
+    </section>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-end">
+          <button
+          id="irArriba" class="btn btn-secondary rounded-circle p-0 animate__animated animate__heartBeat" style="width: 50px; height: 50px" title="Ir arriba">
+          <i class="bi bi-arrow-up"></i>
+        </button>
+        </p>
+        <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+        <p>Rediseñado por Estefi, Sara, Pri y Marti</p>
+      </div>
+    </footer>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/product-info.js"></script>
+    <script src="js/checklogin.js"></script>
+    <script src="js/badgeCart.js"></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>

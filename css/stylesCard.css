@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+/* Estilos para el encabezado de la página */
+#title {
+  text-align: center;
+  margin: 20px 0;
+  padding-bottom: 10px;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background-color: #5a9589;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabla de productos en el carrito */
+.table {
+  width: 100%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Celdas de la tabla */
+td {
+  padding: 15px;
+  vertical-align: top;
+  border-bottom: 2px solid #ddd;
+}
+
+img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los botones */
+.btn-primary {
+  background-color: #5a9589;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #4a7b6d;
+}
+
+/* DARK MODE */
+body.darkmode {
+  background-color: #343a40;
+  color: #f2f2f2;;
+}
+
+body.darkmode .table {
+  background-color: #495057;
+}
+
+body.darkmode .table-striped tbody tr:nth-of-type(odd) {
+  background-color: #545b62;
+}
+
+/* tablas en modo oscuro con el texto claro */
+body.darkmode .table th,
+body.darkmode .table td {
+  color: #f2f2f2;; }
+
+body.darkmode .btn-secondary {
+  background-color: #6c757d;
+  color: #f2f2f2;
+}
+
+.darkmode input[type="text"] {
+  background-color: #495057;
+  color: #f2f2f2;;
+  border: 1px solid #6c757d;
+}

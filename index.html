@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/stylesChatbot.css">
+</head>
+
+<body>
+<!-- Popup de Aviso -->
+<div id="popup-aviso" class="popup-wrapper">
+  <div class="popup-content">
+      <img src="img/logoGirlsDev.png" alt="Logo GirlsDev" class="popup-img">
+      <form id="popup-form" class="popup-form">
+          <input type="email" id="email-input" class="popup-input" placeholder="Introduce tu email" required>
+          <button type="submit" class="popup-btn">Obtener Descuento</button>
+      </form>
+      <button id="popup-close-btn" class="popup-close-btn">&times;</button> <!-- Cruz para cerrar -->
+  </div>
+</div>
+
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <!--nombre usuario-->
+          <li class="nav-item">
+            <div class="dropdown"> <!--menu desplegable-->
+              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="usuariologin">
+                Usuario
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+                <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+                <li><a class="dropdown-item" href="#" id="logout">Cerrar Sesión</a></li> 
+              </ul>
+            </div>
+          </li>
+           <!--Boton carrito-->
+           <li class="nav-item position-relative">
+            <a class="nav-link" href="cart.html">
+              <button type="button" class="btn btn-secondary position-relative" onclick="location.href='cart.html'">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-badge" class="badge bg-secondary position-absolute top-0 start-100 translate-middle p-1">
+                  0 - $0
+                </span>
+              </button>
+            </a>
+          </li>
+          <!--Boton DarkMode-->
+          <li class="nav-item">
+            <button id="theme-switch" class="animate__animated animate__fadeInRight">
+              <i class="fa-solid fa-moon"></i>
+              <i class="fa-regular fa-sun"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Sección de Bienvenida con fondo -->
+<section class="welcome-section" style="background-color: #ffffff; font-size: 1rem; line-height: 1.5; color:#5a9589; padding: 80px 0;">
+    <div class="container text-center animate__animated animate__fadeInRight">
+      <div class="welcome-box">
+        <h1 class="display-4" style="font-size: 5rem;">Bienvenidos a <strong>ESPM</strong></h1>
+      </div>
+      <p class="lead">Aquí encontrarás todo lo que buscas, al mejor precio.</p>
+    </div>
+  </section>
+
+<!-- Sección de Categorías (Cards ajustados) -->
+<section class="categories-section" style="background-color: #f0f0f0; padding: 50px 0;">
+  <div class="container text-center animate__animated animate__fadeInLeft">
+    <h2>Categorías</h2>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm custom-card cursor-active" id="autos">
+              <img class="bd-placeholder-img card-img-top" src="img/cars_index.jpg"
+                alt="Imgagen representativa de la categoría 'Autos'">
+              <h3 class="m-3">Autos</h3>
+              <div class="card-body">
+                <p class="card-text">Los mejores precios en autos 0 kilómetro, de alta y media gama.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm custom-card cursor-active" id="juguetes">
+              <img class="bd-placeholder-img card-img-top" src="img/toys_index.jpg"
+                alt="Imgagen representativa de la categoría 'Juguetes'">
+              <h3 class="m-3">Juguetes</h3>
+              <div class="card-body">
+                <p class="card-text">Encuentra aquí los mejores precios para niños/as de cualquier edad.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm custom-card cursor-active" id="muebles">
+              <img class="bd-placeholder-img card-img-top" src="img/furniture_index.jpg"
+                alt="Imgagen representativa de la categoría 'Muebles'">
+              <h3 class="m-3">Muebles</h3>
+              <div class="card-body">
+                <p class="card-text">Muebles antiguos, nuevos y para ser armados por uno mismo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <a class="btn btn-light btn-lg btn-block" href="categories.html">Y mucho más!</a>
+        </div>
+      </div>
+  </div>
+</section>
+
+    <!-- Sección Quiénes Somos -->
+    <section class="about-section animate__animated animate__fadeInRight animate__delay-2s" style="background-color: #f9f9f9; padding: 60px 0;">
+        <div class="container">
+          <div class="row align-items-center">
+            <!-- Imagen a la izq-->
+            <div class="col-lg-6">
+              <img src="img/fondoIndex.png" alt="Imagen representativa de Quiénes Somos" 
+              class="img-fluid rounded shadow" 
+              style="max-width: 100%; max-height: 600px; object-fit: cover;">
+            </div>
+            <!-- Texto a la der -->
+            <div class="col-lg-6">
+              <h2 class="mb-4" style="font-weight: 1rem; line-height: 1.5; color: #333;">Quiénes Somos</h2>
+              <p style="font-size: 1rem; line-height: 1.5; color: #555;">
+
+    Somos cuatro chicas trabajadoras que han puesto todo su amor y esfuerzo en este proyecto. Entre risas, noches largas y un poco de estrés, hemos creado un sitio web que esperamos que les guste tanto como a nosotras nos gustó hacerlo (¡aunque algunas veces nos hizo querer arrancarnos los pelos! 😅).
+    <br>
+    <br>
+    🤔 ¿Qué es este proyecto?<br>
+    Este es el proyecto final para nuestro curso, donde aplicamos todo lo que aprendimos sobre desarrollo web. El sitio incluye:
+    <br>
+    Una página principal atractiva y moderna ✨<br>
+    Secciones con información relevante y útil 💻<br>
+    Un diseño responsivo que se adapta a cualquier dispositivo 📱<br>
+    Funcionalidades interactivas para una mejor experiencia de usuario 🎉
+    <br>
+    <br>
+    🚀 ¿Cómo lo hicimos?<br>
+    La web fue desarrollada utilizando las siguientes tecnologías:
+    <br>
+    HTML5: Para estructurar el contenido de las páginas.<br>
+    CSS3: Para el diseño y la apariencia, con un toque creativo.<br>
+    JavaScript: Para la interactividad y mejorar la experiencia del usuario.<br>
+    NodeJS, Express, MariaDB, MYSQL: para Backend<br>
+    Cada una de nosotras contribuyó con diferentes partes del proyecto, desde el diseño visual hasta la implementación de funcionalidades. 🛠️💻
+    <br>
+    <br>
+    💜 Hecho con amor (y un poco de estrés) por:<br><strong>
+    Estefi, Sara, Pri y Marti</strong>
+    </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<!-- Chatbot: -->
+<div class="chat-container">
+  <div class="chat-box" id="chat-box">
+    <button id="minimize-btn" aria-label="Minimizar Chat">–</button>
+    <div class="bot-message">¡Hola! mi nombre es ESPM y soy tu chatbot. <br> ¿En qué puedo ayudarte?</div>
+  </div>
+  <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+  <button id="send-btn"><i class="bi bi-send"></i></button>
+</div>
+<!-- Icono flotante de chat -->
+<div id="chat-icon" class="animate__animated animate__heartBeat">
+  <span><i class="bi bi-chat"></i></span> 
+</div>
+
+  </main>
+  <footer class="text-muted"> 
+    <div class="container">
+      <p class="float-end">
+        <button
+        id="irArriba" class="btn btn-secondary rounded-circle p-0 animate__animated animate__heartBeat" style="width: 50px; height: 50px" title="Ir arriba">
+        <i class="bi bi-arrow-up"></i>
+      </button>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      <p>Rediseñado por Estefi, Sara, Pri y Marti</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/badgeCart.js"></script>
+  <script src="js/checklogin.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+
+</html>

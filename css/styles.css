@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+body {
+  font-family: "Quicksand", sans-serif;
+  padding-top: 80px;
+}
+
+/* LOGIN */
+body.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  margin: 0;
+  background-color: transparent; 
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+/* formulario de login */
+.form-login {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* inputs y botones del formulario */
+.form-login input {
+  width: 90%;
+  height: 40px;
+  margin: 0.9rem;
+}
+
+.form-login button {
+  padding: 1em;
+  border: none;
+  border-radius: 20px;
+  background: #5A9589;
+  cursor: pointer;
+}
+
+footer.login-page {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  text-align: center;
+  font-size: 0.875rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer.login-page .btn {
+  background-color: #5A9589;
+}
+
+
+/* Seccion MYprofile*/ 
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+/* INIT */
+    .welcome-box {
+      display: inline-block;
+      border: 1px solid  #5a9589; 
+      padding: 10px 20px;
+      border-radius: 10px; 
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); 
+      background-color: transparent; 
+    }
+    
+    /* Estilo para el subtítulo (por fuera del recuadro) */
+    .welcome-section p.lead {
+      margin-top: 20px; 
+      font-size: 1.2rem; 
+      color: #5a9589;; 
+    }
+        
+        /* Ajustar las tarjetas */
+        .categories-section .card {
+          height: 400px; 
+          width: 100%; 
+          max-width: 300px;
+          margin: auto; 
+        }
+        .categories-section h2 {
+      margin-bottom: 30px;
+    }
+        .categories-section .card img {
+          height: 60%; 
+          object-fit: cover; 
+        }
+        
+        .categories-section .card h3 {
+          font-size: 1.2rem; 
+        }
+        
+        .categories-section .card p {
+          font-size: 0.9rem; 
+        }
+          /* Estilo del botón de "Ver más" */
+      .categories-section .btn {
+        display: block;
+        width: 25%; 
+        margin: 30px auto 0 auto; 
+        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); 
+        transition: transform 0.2s ease-in-out; 
+      }
+    
+      .categories-section .btn:hover,
+      .categories-section .card:hover{
+        transform: scale(1.05); 
+        transition: .15s;
+}
+    
+
+
+/* Estilos generales para las secciones */
+.jumbotron,
+.card-body,
+.container,
+.site-header {
+  font-family: "Quicksand", sans-serif !important;
+}
+
+.jumbotron .display-4 {
+  font-weight: bold;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  user-select: none;
+}
+
+.lead {
+  font-family: 'Quicksand', serif;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+/* Jumbotron con fondo e imagen de portada */
+.jumbotron {
+  height: 50vh;
+  padding: 5em inherit;
+  margin-bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: black;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  text-shadow: 1px 1px 2px grey;
+}
+
+.jumbotron .lead {
+  font-size: 38px;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+/* Cambios de color para la barra de navegación */
+.site-header a {
+  color: white;
+  transition: ease-in-out color .15s;
+}
+
+.site-header .dropdown-menu a {
+  color: black;
+}
+
+.dropzone {
+  border: 2px dashed #0087F7;
+  border-radius: 5px;
+  background: white;
+}
+
+.img-fit {
+  max-height: 100%;
+}
+
+.alert {
+  position: fixed;
+  top: 80px;
+  width: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+}
+
+.cursor-active {
+  cursor: pointer;
+}
+
+.left {
+  float: left;
+  padding: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Estilos de carga */
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Formulario de inicio de sesión */
+.form-login { 
+  background-color:#A0D9CE;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  font-size: 1.125rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  box-shadow: 10px 10px 10px #F2F2F2;
+  }
+  
+  .form-login input{ 
+    width: 90%;
+    height: 30px;
+    margin: .9rem
+  }
+  
+  .form-login button{ 
+    padding: 1em 1em;
+    border: none;
+    border-radius: 20px;
+    background: #5A56BF;
+    cursor: pointer;
+    color:#F2F2F2;
+  }
+  
+  .img-login { 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+
+
+/* Modo oscuro */
+.darkmode {
+  background-color: #1e1e1e;
+  color: #b6afaf;
+} 
+
+/* Estilos del interruptor de tema */
+#theme-switch {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: #5a9589;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 20px;
+}
+
+#theme-switch i {
+  fill: #38373C;
+}
+
+#theme-switch i:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch i:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch i:last-child {
+  display: block;
+}
+
+/* Aplicación del modo oscuro a encabezados y párrafos */
+.darkmode h1,
+.darkmode h2,
+.darkmode h3,
+.darkmode p {
+  color: #b6afaf;
+}
+
+/* Cambia los enlaces en modo oscuro */
+.darkmode a {
+  color: #5a9589;
+}
+
+/* Cambia el estilo de los botones en modo oscuro */
+.darkmode button {
+  background-color: #2a5950;
+  color: #b6afaf;
+}
+
+/* Navbar y footer en modo oscuro */
+.darkmode .navbar,
+.darkmode .footer {
+  background-color: #1e1e1e;
+  color: #b6afaf;
+}
+
+/* Navbar fija, evita que se mueva */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0; 
+  right: 0; 
+  width: 100vw; 
+  z-index: 9999; /* Se asegura de que esté por encima de otros elementos */
+  padding: 1rem 20px; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+/* Evitar desajustes entre modos */
+.darkmode body {
+  padding-top: 80px;
+}
+
+/* Estilos del popup */
+.popup-wrapper {
+  display: none; /* Se oculta inicialmente */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.popup-content {
+  background-color: #FBE6DD; /* Color de fondo actualizado */
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  width: 300px;
+  position: relative;
+}
+
+.popup-img {
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 15px;
+}
+
+.popup-form {
+  margin-top: 15px;
+}
+
+.popup-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.popup-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #5a9589;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-btn:hover {
+  background-color:#2a5950;
+}
+
+.popup-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+}
+
+.popup-close-btn:hover {
+  color: #dc3545;
+}
+
+/* Mostrar el popup */
+.popup-wrapper.show {
+  display: flex;
+  opacity: 1;
+}

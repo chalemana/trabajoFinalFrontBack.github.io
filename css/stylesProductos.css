@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+body{
+  font-family: "Quicksand", sans-serif;
+}
+
+#tablaProducts h4{
+    text-align: center;
+    margin: 20px 0;
+    padding-bottom: 10px;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background-color: #5a9589;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+#productsAuto{
+    padding: 15px;
+    background-color: #F2F2F2;
+    color: #38373C;
+    text-align: left;
+}
+
+table {
+    width: 100%;
+    margin: 20px auto; 
+    border-collapse: collapse;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+td {
+    padding: 15px;
+    vertical-align: top;
+    border-bottom: 2px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #EEEDE9;
+}
+
+tr:hover {
+    background-color: #5a9589;
+    color: white;
+    cursor: pointer;
+}
+
+img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.descripcion {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+

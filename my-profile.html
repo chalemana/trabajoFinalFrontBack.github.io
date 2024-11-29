@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/stylesMyProfile.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <!--nombre usuario-->
+          <li class="nav-item">
+            <div class="dropdown"> <!--menu desplegable-->
+              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="usuariologin">
+                Usuario
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+                <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+                <li><a class="dropdown-item" href="#" id="logout">Cerrar Sesión</a></li>
+              </ul>
+            </div>
+          </li>
+           <!--Boton carrito-->
+           <li class="nav-item position-relative">
+            <a class="nav-link" href="cart.html">
+              <button type="button" class="btn btn-secondary position-relative" onclick="location.href='cart.html'">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-badge" class="badge bg-secondary position-absolute top-0 start-100 translate-middle p-1">
+                  0 - $0
+                </span>
+              </button>
+            </a>
+          </li>
+          <!--Boton DarkMode-->
+          <li class="nav-item">
+            <button id="theme-switch" class="animate__animated animate__fadeInRight">
+              <i class="fa-solid fa-moon"></i>
+              <i class="fa-regular fa-sun"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+  <div class="container mt-5">
+      <div class="card">
+          <div class="card-body">
+              <h2 class="card-title mb-4">Perfil de Usuario</h2>
+              <form id="profileForm">
+                  <div class="row mb-3">
+                      <div class="col-md-6">
+                          <label for="nombre" class="form-label">Nombre*</label>
+                          <input type="text" class="form-control" id="nombre" required>
+                      </div>
+                      <div class="col-md-6">
+                          <label for="segundoNombre" class="form-label">Segundo nombre</label>
+                          <input type="text" class="form-control" id="segundoNombre">
+                      </div>
+                  </div>
+                  <div class="row mb-3">
+                      <div class="col-md-6">
+                          <label for="apellido" class="form-label">Apellido*</label>
+                          <input type="text" class="form-control" id="apellido" required>
+                      </div>
+                      <div class="col-md-6">
+                          <label for="segundoApellido" class="form-label">Segundo apellido</label>
+                          <input type="text" class="form-control" id="segundoApellido">
+                      </div>
+                  </div>
+                  <div class="mb-3">
+                      <label for="email" class="form-label">E-mail*</label>
+                      <input type="email" class="form-control" id="inputEmail" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="telefono" class="form-label">Teléfono de contacto</label>
+                      <input type="tel" class="form-control" id="telefono">
+                  </div>
+                  <div class="mb-3">
+                      <label class="form-label">Foto de perfil</label>
+                      <div class="d-flex align-items-center">
+                          <img src="img/chili.jpg" alt="Foto de perfil" class="profile-pic me-3" id="profilePic">
+                          <input type="file" class="form-control" id="profilePicInput" accept="image/*">
+                      </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Guardar cambios</button>
+              </form>
+          </div>
+      </div>
+  </div>
+      </div>
+    </div>
+
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+      <button
+        id="irArriba" class="btn btn-secondary rounded-circle p-0 animate__animated animate__heartBeat" style="width: 50px; height: 50px" title="Ir arriba">
+        <i class="bi bi-arrow-up"></i>
+      </button>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      <p>Rediseñado por Estefi, Sara, Pri y Marti</p>
+    </div>
+  </footer>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/my-profile.js"></script>
+  <script src="js/badgeCart.js"></script>
+  <script src="js/checklogin.js"></script> 
+</body>
+
+</html>
+

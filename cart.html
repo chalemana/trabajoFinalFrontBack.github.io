@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/stylesCard.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <!--nombre usuario-->
+          <li class="nav-item">
+            <div class="dropdown"> <!--menu desplegable-->
+              <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="usuariologin">
+                Usuario
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+                <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+                <li><a class="dropdown-item" href="#" id="logout">Cerrar Sesión</a></li>
+              </ul>
+            </div>
+          </li>
+           <!--Boton carrito-->
+           <li class="nav-item position-relative">
+            <a class="nav-link" href="cart.html">
+              <button type="button" class="btn btn-secondary position-relative" onclick="location.href='cart.html'">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-badge" class="badge bg-secondary position-absolute top-0 start-100 translate-middle p-1">
+                  0 - $0
+                </span>
+              </button>
+            </a>
+          </li>
+          <!--Boton DarkMode-->
+          <li class="nav-item">
+            <button id="theme-switch" class="animate__animated animate__fadeInRight">
+              <i class="fa-solid fa-moon"></i>
+              <i class="fa-regular fa-sun"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+   <!--CARRITO DE COMPRAS-->
+
+   <div class="container mt-5">
+    <h2 id="title">Mi Carrito</h2>
+    <div class="row">
+      <!-- Tabla de productos en el carrito -->
+      <div class="col-md-8">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Imagen</th>
+              <th>Nombre</th>
+              <th>Moneda</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="selectProductId">
+            <!-- Los productos se insertarán aquí dinámicamente -->
+          </tbody>
+        </table>
+      </div>
+  
+      <!-- Columna de totales, acordeón de envío y botones -->
+      <div class="col-md-4">
+        <table class="table table-striped">
+          <tbody>
+            <tr>
+              <td>Subtotal</td>
+              <td id="subtotalCarrito">0</td>
+            </tr>
+            <tr>
+              <td>Descuentos</td>
+              <td id="cartDiscount">0</td>
+            </tr>
+            <tr>
+              <td>Envío</td>
+              <td id="envioCarrito">250</td>
+            </tr>
+            <tr>
+              <td><strong>Total</strong></td>
+              <td id="totalCarrito">0</td>
+            </tr>
+          </tbody>
+        </table>
+  
+        <!-- Código de descuento -->
+        <div class="mb-3">
+          <input type="text" id="discountCode" class="form-control" placeholder="Código de descuento">
+          <button id="applyDiscount" class="btn btn-primary mt-2">Aplicar Descuento</button>
+        </div>
+  
+        <!-- Acordeón de Tipo de Envío, Dirección y Forma de Pago -->
+        <div class="accordion mt-4" id="acordeonEnvio">
+          <!-- Tipo de envío -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="encabezadoTipoEnvio">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#colapsarTipoEnvio" aria-expanded="true" aria-controls="colapsarTipoEnvio">
+                Tipo de envío
+              </button>
+            </h2>
+            <div id="colapsarTipoEnvio" class="accordion-collapse collapse show" aria-labelledby="encabezadoTipoEnvio" data-bs-parent="#acordeonEnvio">
+              <div class="accordion-body">
+                <select id="tipoEnvioSelect" class="form-select">
+                  <option value="premium">Premium 2 a 5 días (15%)</option>
+                  <option value="express">Express 5 a 8 días (7%)</option>
+                  <option value="standard">Standard 12 a 15 días (5%)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Dirección de envío --> 
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="encabezadoDireccionEnvio">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#colapsarDireccionEnvio" aria-expanded="false" aria-controls="colapsarDireccionEnvio">
+                Dirección de envío
+              </button>
+            </h2>
+            <div id="colapsarDireccionEnvio" class="accordion-collapse collapse" aria-labelledby="encabezadoDireccionEnvio" data-bs-parent="#acordeonEnvio">
+              <div class="accordion-body">
+                <input type="text" id="departamento" class="form-control mb-2" placeholder="Departamento" required>
+                <input type="text" id="localidad" class="form-control mb-2" placeholder="Localidad" required>
+                <input type="text" id="calle" class="form-control mb-2" placeholder="Calle" required>
+                <input type="text" id="numero" class="form-control mb-2" placeholder="Número" required>
+                <input type="text" id="esquina" class="form-control mb-2" placeholder="Esquina" required>
+              </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Forma de pago -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="encabezadoFormaPago">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#colapsarFormaPago" aria-expanded="false" aria-controls="colapsarFormaPago">
+                Forma de pago
+              </button>
+            </h2>
+            <div id="colapsarFormaPago" class="accordion-collapse collapse" aria-labelledby="encabezadoFormaPago" data-bs-parent="#acordeonEnvio">
+              <div class="accordion-body">
+                <select id="formaPago" class="form-select">
+                  <option value="tarjeta">Tarjeta de crédito</option>
+                  <option value="transferencia">Transferencia bancaria</option>
+                  <option value="paypal">PayPal</option>
+                </select>
+                <div id="camposAdicionales" style="display: none; margin-top: 10px;"></div>
+              </div>
+            </div>
+          </div>
+        
+        <!-- Botones de finalizar y vaciar carrito -->
+        <button id="boton-finalizar-compra" class="btn btn-primary mt-3 w-100">Finalizar compra</button>
+        <button id="boton-vaciar-carrito" class="btn btn-secondary mt-2 w-100">Vaciar Carrito</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <!--TERMINA CARRITO DE COMPRAS-->
+
+
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <button
+        id="irArriba" class="btn btn-secondary rounded-circle p-0 animate__animated animate__heartBeat" style="width: 50px; height: 50px" title="Ir arriba">
+        <i class="bi bi-arrow-up"></i>
+      </button>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      <p>Rediseñado por Estefi, Sara, Pri y Marti</p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/badgeCart.js"></script>
+  <script src="js/checklogin.js"></script> 
+</body>
+
+</html>

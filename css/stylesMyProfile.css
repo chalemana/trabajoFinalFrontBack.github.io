@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+body {
+    font-family: "Quicksand", sans-serif;
+    background-color: #EEEDE9; 
+}
+
+/* Estilo del contenedor del perfil */
+.container {
+    margin-top: 30px; 
+}
+
+/* Sección del perfil */
+.card {
+    background-color: #FFF; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 20px; 
+    margin: auto;
+}
+
+/* Título de la tarjeta */
+.card-title {
+   
+        text-align: center;
+        margin: 20px 0;
+        padding-bottom: 10px;
+        color: #38373C;
+        font-size: 2em;
+        font-weight: bold;
+        letter-spacing: 2px;
+        background-color: #c6c6c3;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen de perfil */
+.profile-pic {
+    width: 100px; 
+    height: 100px; 
+    max-width: 150px;
+    max-height: 150px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-right: 15px;
+    border: 2px solid #5a9589;
+}
+
+/* Estilo del formulario */
+form {
+    display: flex; 
+    flex-direction: column; 
+}
+
+/* Etiquetas de los campos */
+.form-label {
+    font-weight: bold; 
+    color: #38373C;
+}
+
+/* Campos de entrada */
+.form-control {
+    margin-bottom: 15px; 
+    border-radius: 5px; 
+    border: 1px solid #ddd; 
+    transition: border-color 0.3s; 
+}
+
+/* Campos de entrada al enfocar */
+.form-control:focus {
+    border-color: #5a9589; 
+}
+
+/* Botón de guardar cambios */
+.btn-primary {
+    background-color: #5a9589; 
+    border: none; 
+    transition: background-color 0.3s; 
+}
+
+.btn-primary:hover {
+    background-color: #4e8478;
+}
+
