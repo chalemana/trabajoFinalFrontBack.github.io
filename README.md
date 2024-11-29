@@ -13,5 +13,4 @@ En el proyecto principal, creamos un sitio web utilizando tecnologías como HTML
 
 
 💜 Hecho con amor (y un poco de estrés) por:
-
 Pri, Estefi, Sara y Marti.
