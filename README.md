@@ -9,8 +9,5 @@ Esta carpeta es un complemento de nuestro Trabajo Final - Sitio Web. Contiene ta
 
 🚀 Nuestro Trabajo Final
 
-En el proyecto principal, creamos un sitio web utilizando tecnologías como HTML5, CSS3 y JavaScript, y en esta carpeta puedes ver cómo integramos y organizamos las partes adicionales del desarrollo.
-
-
 💜 Hecho con amor (y un poco de estrés) por:
 Pri, Estefi, Sara y Marti.
