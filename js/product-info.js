@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Cargar y mostrar información del producto seleccionado
     function cargarProducto(productId) {
-        fetch("https://japceibal.github.io/emercado-api/products/" + productId + ".json")
+        fetch(PRODUCT_INFO_URL + productId)
             .then(response => response.json())
             .then(data => {
                 document.getElementById('productName').innerHTML = data.name;
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mostrar comentarios desde la API
     function mostrarComentariosDesdeApi(productId) {
-        fetch("https://japceibal.github.io/emercado-api/products_comments/" + productId + ".json")
+        fetch(PRODUCT_INFO_COMMENTS_URL + productId)
             .then(response => response.json())
             .then(comentarios => {
                 const comentariosGuardados = JSON.parse(localStorage.getItem(`comentarios_${productId}`)) || [];

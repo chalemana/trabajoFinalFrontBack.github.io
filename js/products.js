@@ -77,9 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const id = localStorage.getItem('catID'); 
     
     if (id) {
-        const CAT_URL = "https://japceibal.github.io/emercado-api/cats_products/" + id +".json";
-        
-        fetch(CAT_URL)
+        fetch(PRODUCTS_URL + id)
             .then(response => response.json())
             .then(data => {
                 productsArray = data.products;
